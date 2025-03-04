@@ -1,8 +1,8 @@
 # Dependency directories
-ggcode_modules/
+lorry_modules/
 
 # Expamples target directory
 /app/
 
 # Lock file
-ggcode-info.lock
+lorry-info.lock

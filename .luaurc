@@ -17,7 +17,7 @@
   ],
   "aliases": {
     "root": ".",
-    "develfish-repo.core": "../develfish-repo-core/lib",
+    "develfish-repo.core": "../core/lib",
     "develfish-repo.compose": "./lib"
   }
 }

@@ -1,4 +1,4 @@
-local ggcode = require("@develfish-repo.core/ggcode")
+local lorry = require("@develfish-repo.core/lorry")
 local Project = require('@develfish-repo.core/Project')
 local Haproxy = require('@develfish-repo.compose/Haproxy')
 local Postgres = require('@develfish-repo.compose/Postgres')
@@ -36,7 +36,7 @@ local minio_client = {
   secret_key = 'AZitoDkffcEYFYUmV4CGv1jr2fiXWIw4uSvdFlDu'
 }
 
-ggcode.generate "@/compose" {
+lorry.generate "@/compose" {
   target = '@store',
   variables = {
     project = project:unwrap_project(),
@@ -59,7 +59,7 @@ ggcode.generate "@/compose" {
   }
 }
 
-ggcode.generate "@/haproxy" {
+lorry.generate "@/haproxy" {
   target = '@store',
   variables = Haproxy
     :from(project)
@@ -131,21 +131,21 @@ ggcode.generate "@/haproxy" {
     :unwrap()
 }
 
-ggcode.generate "@/kafka" {
+lorry.generate "@/kafka" {
   target = '@store',
   variables = {
     project = project:unwrap_project()
   }
 }
 
-ggcode.generate "@/kafka-ui" {
+lorry.generate "@/kafka-ui" {
   target = '@store',
   variables = {
     project = project:unwrap_project()
   }
 }
 
-ggcode.generate "@/pgadmin" {
+lorry.generate "@/pgadmin" {
   target = '@store',
   variables = Pgadmin
     :from(project)
@@ -156,7 +156,7 @@ ggcode.generate "@/pgadmin" {
     :unwrap()
 }
 
-ggcode.generate "@/postgres" {
+lorry.generate "@/postgres" {
   target = '@store',
   variables = Postgres
     :from(project)
@@ -167,14 +167,14 @@ ggcode.generate "@/postgres" {
     :unwrap()
 }
 
-ggcode.generate "@/keycloak" {
+lorry.generate "@/keycloak" {
   target = '@store',
   variables = Keycloak
     :from(project, datasource_keycloak)
     :unwrap()
 }
 
-ggcode.generate "@/kcadm" {
+lorry.generate "@/kcadm" {
   target = '@store',
   variables = Kcadm
     :from(project)
@@ -206,7 +206,7 @@ ggcode.generate "@/kcadm" {
     :unwrap()
 }
 
-ggcode.generate "@/minio" {
+lorry.generate "@/minio" {
   target = '@store',
   variables = Minio
     :from(project)
@@ -214,7 +214,7 @@ ggcode.generate "@/minio" {
     :unwrap()
 }
 
-ggcode.generate "@/mcli" {
+lorry.generate "@/mcli" {
   target = '@store',
   variables = Mcli
     :from(project)
@@ -253,7 +253,7 @@ ggcode.generate "@/mcli" {
     :unwrap()
 }
 
-ggcode.generate "@/swagger-ui" {
+lorry.generate "@/swagger-ui" {
   target = '@store',
   variables = {
     project = project:unwrap_project(),
@@ -272,7 +272,7 @@ ggcode.generate "@/swagger-ui" {
   }
 }
 
-ggcode.generate "@/app" {
+lorry.generate "@/app" {
   target = '@store',
   variables = App
     :from(project, 'app-assembly-web', 'store/assembly_web:1.0-SNAPSHOT')
@@ -296,7 +296,7 @@ ggcode.generate "@/app" {
     :unwrap()
 }
 
-ggcode.generate "@/spa" {
+lorry.generate "@/spa" {
   target = '@store',
   variables = Spa
     :from(project, 'app-admin-ui', 'store/admin_ui:1.0-SNAPSHOT')

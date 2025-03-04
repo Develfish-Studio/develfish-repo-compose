@@ -39,9 +39,9 @@ scrolls:
   path: scrolls/worker
 repositories:
 - name: develfish-repo.core
-  uri: git@github.com:ntr1x/ggcode-repo-core.git
+  uri: git@github.com:Develfish-Studio/develfish-repo-core.git
 targets:
 - name: '@app'
   path: app
 - name: '@store'
-  path: ../../ggcode-generated/ggcode-generated-store
+  path: ../../develfish-example/store
