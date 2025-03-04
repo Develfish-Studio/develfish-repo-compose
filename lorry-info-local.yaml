@@ -1,0 +1,47 @@
+name: develfish-repo.compose
+actions:
+  generate-store:
+    path: actions/generate-store.luau
+  test/postgres:
+    path: actions/test/postgres.luau
+  test/pgadmin:
+    path: actions/test/pgadmin.luau
+scrolls:
+  app:
+    path: scrolls/app
+  make:
+    path: scrolls/make
+  spa:
+    path: scrolls/spa
+  compose:
+    path: scrolls/compose
+  haproxy:
+    path: scrolls/haproxy
+  postgres:
+    path: scrolls/postgres
+  kafka:
+    path: scrolls/kafka
+  kafka-ui:
+    path: scrolls/kafka-ui
+  kcadm:
+    path: scrolls/kcadm
+  keycloak:
+    path: scrolls/keycloak
+  pgadmin:
+    path: scrolls/pgadmin
+  swagger-ui:
+    path: scrolls/swagger-ui
+  minio:
+    path: scrolls/minio
+  mcli:
+    path: scrolls/mcli
+  worker:
+    path: scrolls/worker
+dependencies:
+  develfish-repo.core:
+    uri: git@github.com:Develfish-Studio/develfish-repo-core.git
+targets:
+  '@app':
+    path: app
+  '@store':
+    path: ../../develfish-example/store
