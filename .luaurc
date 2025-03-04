@@ -1,0 +1,23 @@
+{
+  "languageMode": "strict",
+  "lint": {
+    "*": true
+  },
+  "lintErrors": false,
+  "typeErrors": true,
+  "globals": [
+    "warn",
+    "table",
+    "json",
+    "yaml",
+    "engine",
+    "shell",
+    "array_mt",
+    "template"
+  ],
+  "aliases": {
+    "root": ".",
+    "develfish-repo.core": "../develfish-repo-core/lib",
+    "develfish-repo.compose": "./lib"
+  }
+}
